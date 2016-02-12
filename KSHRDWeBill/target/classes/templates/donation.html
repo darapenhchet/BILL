@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>HRD CENTER DONATION</title>
+        <!-- Bootstrap 3.3.5 -->
+        <meta name="ctx" th:content="${#httpServletRequest.getContextPath()}" />
+		<link rel="stylesheet" th:href="@{/static/bootstrap/css/bootstrap.min.css}" />
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+		<!-- Theme style -->
+		<link rel="stylesheet" th:href="@{/static/dist/css/AdminLTE.min.css}" />
+		<!-- iCheck -->
+		<link rel="stylesheet" th:href="@{/static/plugins/iCheck/square/blue.css}" />
+    </head>
+    <body>
+<!--         <h1>Welcome!</h1>
+        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p> -->
+        <div class="container">
+			<div class="row">
+		        <h1>WELCOME TO HRD DONATION SYSTEM!</h1>
+		        <div class="col-md-5 login-box-body">
+		        	<h4>Please enter your amount for donation to HRD Center</h4>
+			        <form th:action="@{/donates}" method="POST">
+						<div class="form-group has-feedback">
+							<input type="text" class="form-control" name="txtAmount" id="txtAmount" placeholder="Amount 5, 10" value="5" required="required"/> 
+							<span class="glyphicon glyphicon-usd form-control-feedback"></span>
+						</div>
+			            <button type="button" id="btnSubmit" class="btn btn-primary btn-block btn-flat">Send Your Donation To HRD</button>
+			        </form>
+			        <br />
+			        <div class="alert alert-success fade in" id="alertSuccess" style="display:none;">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					    <strong>Thanks You!</strong> for your donation and help us to keep doing on it more. 
+					</div>
+					
+					<div class="alert alert-danger fade in" id="alertDanger" style="display:none;">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					    <strong>Oop!</strong> something has been error with <span id="errorMessage"></span>. 
+					</div>
+		        </div>
+	       </div>
+	    </div>
+	    <!-- jQuery 2.1.4 -->
+		<script type="text/javascript" th:src="@{/static/plugins/jQuery/jQuery-2.1.3.min.js}"></script>
+		<!-- Bootstrap 3.3.5 -->
+		<script type="text/javascript" th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
+		<!-- iCheck -->
+		<script type="text/javascript" th:src="@{/static/plugins/iCheck/icheck.min.js}"></script>
+		<script type="text/javascript" th:src="@{/static/javascripts/jquery.tmpl.min.js}"></script>
+		<script type="text/javascript" th:src="@{/static/javascripts/jquery.bootpag.min.js}"></script>
+		<script type="text/javascript" th:src="@{/static/javascripts/jquery.bpopup.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/static/js/main.js}"></script>
+    </body>
+</html>
